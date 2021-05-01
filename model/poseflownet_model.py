@@ -75,7 +75,7 @@ class PoseFlowNet(BaseModel):
 
         self.image_paths=[]
         for i in range(self.input_P1.size(0)):
-            self.image_paths.append(os.path.splitext(input['P1_path'][i])[0] + '_2_' + input['P2_path'][i])
+            self.image_paths.append(os.path.splitext(input['P1_path'][i])[0] + '_to_' + input['P2_path'][i])
 
 
     def forward(self):

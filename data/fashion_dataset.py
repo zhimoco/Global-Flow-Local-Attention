@@ -15,7 +15,7 @@ class FashionDataset(BaseDataset):
             parser.set_defaults(load_size=256)
         else:
             parser.set_defaults(load_size=256)
-        parser.set_defaults(old_size=(256, 176))
+        parser.set_defaults(old_size=(256, 192))
         parser.set_defaults(structure_nc=18)
         parser.set_defaults(image_nc=3)
         parser.set_defaults(display_winsize=256)
@@ -26,11 +26,11 @@ class FashionDataset(BaseDataset):
     def get_paths(self, opt):
         root = opt.dataroot
         phase = opt.phase
-        pairLst = os.path.join(root, 'fasion-pairs-%s.csv' % phase)
+        pairLst = os.path.join(root, 'fashion-pairs-%s.csv' % phase)
         name_pairs = self.init_categories(pairLst)
         
         image_dir = os.path.join(root, '%s' % phase)
-        bonesLst = os.path.join(root, 'fasion-annotation-%s.csv' % phase)
+        bonesLst = os.path.join(root, 'fashion-annotation-%s.csv' % phase)
         return image_dir, bonesLst, name_pairs
 
 
